@@ -1,0 +1,222 @@
+$pink: #e040fb;
+$white: #FFFFFF;
+$dark: #424242;
+$grey: #6b6b6b;
+
+@mixin bg_img($url, $size, $position) {
+  background-image: url($url);
+  background-size: $size;
+  background-position: $position;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "arial";
+  -webkit-font-smoothing: antialised;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Georgia";
+  font-weight: 400;
+}
+
+.cf:before, .cf:after{
+  content: "";
+  display: table;
+}
+
+.cf:after{
+  clear :both;
+}
+
+.wrapper{
+  width: 1000px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.banner{
+  padding: 5em 0;
+  .logo{
+    float: left;
+  }
+  h1{
+    color: $dark;
+    text-align: right;
+    font-size: 5em;
+    display: inline;
+    float: right;
+    margin: 0;
+  }
+}
+
+.logo{
+  background: $pink;
+  border-radius: 100%;
+  width:75px;
+  height:75px;
+  line-height: 75px;
+  text-align: center;
+  color: $white;
+  font-size: 1.1em;
+  font-family: "Georgia";
+}
+
+.row{
+  width: 100%;
+  margin-bottom: 3%;
+  &:before, &:after{
+    content:"";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+}
+
+.work{
+  background: $grey;
+  padding: 5em 0;
+  .card{
+    background: $white;
+    border-radius: .5em;
+    height: 450px;
+    display: table;
+    background-repeat: no-repeat;
+  }
+  .card_full{
+    width: 100%;
+  }
+
+  .card_half{
+    width: 48.5%;
+    float:left;
+  }
+
+  .card_third{
+    width: 75%;
+    float: left;
+  }
+
+  .left{
+    margin-right: 1.5%;
+  }
+
+  .right{
+    margin-left: 1.5%;
+  }
+
+  .card_1{
+    @include bg_img('images/RowlIcon1024.png', 68%, 330px 90px);
+  }
+
+  .card_2{
+    @include bg_img('images/BrickDiffGreenNYell1.png', 40%, -70px -52px);
+  }
+
+  .card_3{
+    @include bg_img('images/RestoreButton1.png', 76%, 254px 162px);
+  }
+
+  .card_4{
+    @include bg_img('images/Timer1.png', 107%, 170px -114px);
+  }
+
+  .card_inner{
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    padding: 1.5em 12%;
+    color: $white;
+    p{
+      font-size: 1em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    h2{
+      font-size: 4em;
+      margin: 0;
+    }
+  }
+
+  .pink{
+    background: rgba(230, 56, 222, .6);
+    border-radius: .5em;
+  }
+
+  .green{
+    background: rgba(80, 218, 93, .6);
+    border-radius: .5em;
+  }
+
+  .purple{
+    background: rgba(145, 89, 219, .6);
+    border-radius: .5em;
+  }
+
+  .blue{
+    background: rgba(131, 226, 245, .6);
+    border-radius: .5em;
+  }
+
+  .view_more{
+    width: 25%;
+    float: left;
+    height: 450px;
+    padding-left: 3em;
+    p{
+      font-size: 1.25em;
+      font-weight: 700;
+      line-height: 450px;
+      margin: 0;
+      color: rgba(146, 146, 171, 1);
+    }
+    a{
+      text-decoration: none;
+      &:hover{
+        p{
+          color: $pink;
+        }
+      }
+    }
+  }
+}
+
+footer{
+  padding: 3em;
+  .logo{
+    float: left;
+    margin: 0;
+    }
+    ul{
+    padding-top: 1em;
+    list-style: none;
+    margin: 0;
+    li{
+      display: inline;
+      float: left;
+      margin-left: 4em;
+      .title{
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: .75em;
+        display: block;
+        padding-bottom: .5em;
+      }
+      .links{
+        font-family: "Georgia";
+        font-size: 1.75em;
+        a{
+          color: $grey;
+          text-decoration: none;
+          &:hover{
+            color: $pink;
+          }
+        }
+      }
+    }
+  }
+}
